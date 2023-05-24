@@ -9,12 +9,23 @@ use Symfony\Component\Routing\Annotation\Route;
 class StandardController extends AbstractController
 {
     /**
-     * @Route("/standard", name="app_standard")
+     * @Route("/", name="app_standard")
      */
     public function index(): Response
     {
         return $this->render('standard/index.html.twig', [
-            'controller_name' => 'braian',
+            'controller_name' => 'braian', 
+        ]);
+    }
+
+    /**
+     * @Route("/pagina2/{nombre}", name="pagina2")
+     */
+
+    public function pagina2($nombre)
+    {
+        return $this->render('standard/pagina2.html.twig', [
+            "parametro1" => $nombre
         ]);
     }
 }
